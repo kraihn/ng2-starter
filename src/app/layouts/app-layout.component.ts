@@ -8,11 +8,11 @@ import * as layout from '../core/layout';
 
 @Component({
   template: `
-    <md-sidenav-layout>
+    <md-sidenav-layout fullscreen>
       <sidebar [open]="showSidenav$ | async">
-        <a md-list-item routerLink="/home" routerLinkActive="active">Home</a>
-        <a md-list-item routerLink="/login" routerLinkActive="active">Login</a>
-        <a md-list-item routerLink="/not-found" routerLinkActive="active">Not-Found</a>
+        <a md-list-item (click)="closeSidenav()" routerLink="/home" routerLinkActive="active">Home</a>
+        <a md-list-item (click)="closeSidenav()" routerLink="/login" routerLinkActive="active">Login</a>
+        <a md-list-item (click)="closeSidenav()" routerLink="/not-found" routerLinkActive="active">Not-Found</a>
       </sidebar>
       <toolbar (openMenu)="openSidenav()"></toolbar>
       <router-outlet></router-outlet>

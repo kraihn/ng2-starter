@@ -8,7 +8,7 @@ const routes = [
    { path: 'home', component: layouts.AppLayoutComponent, children: [
       { path: '', component: contentPages.HomeComponent}
     ]},
-    { path: 'not-found', component: layouts.ContentLayoutComponent, children: [
+    { path: 'not-found', component: layouts.AppLayoutComponent, children: [
       { path: '', component: contentPages.NotFoundComponent}
     ]}
 ]

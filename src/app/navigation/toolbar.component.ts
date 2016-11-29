@@ -10,14 +10,14 @@ import * as session from '../core/session';
 @Component({
   selector: 'toolbar',
   template:`
-<md-toolbar color="primary">
-  <button class="app-icon-button" (click)="openMenu.emit()">
-    <i class="material-icons app-toolbar-menu">menu</i>
-  </button>
-  Angular2-Redux-Starter
-  {{ (user | async)?.email }}
-  <button *ngIf="isAuthenticated | async" (click)="logout()">Logout</button>
-</md-toolbar>
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="openMenu.emit()">
+        <md-icon>menu</md-icon>
+      </button>
+      <span>Angular2-Redux-Starter</span>
+      <span>{{ (user | async)?.email }}</span>
+      <button *ngIf="isAuthenticated | async" (click)="logout()">Logout</button>
+    </md-toolbar>
   `
 })
 export class ToolbarComponent {
