@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component }    from '@angular/core';
+
+import { Store }        from '@ngrx/store';
+import { AngularFire }  from 'angularfire2';
+
+import * as app         from './core';
+import * as session        from './core/session';
+import * as sessionUtil    from './core/session/util';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template:`<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(store: Store<app.State>, af: AngularFire) {
+    af.auth.subscribe(authState => {
+      const user: session.User = sessionUtil.mapToUser(authState);
+      store.dispatch(new session.AuthChangedAction(user));
+    });
+  }
 }
