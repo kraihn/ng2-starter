@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'sidebar',
   template: `
-      <md-sidenav #sidenav mode="side" class="app-sidenav">
+      <md-sidenav [opened]="open" mode="side" class="app-sidenav">
         <md-nav-list>
-          <a md-list-item routerLink="home" routerLinkActive="active">Home</a>
-          <a md-list-item routerLink="login" routerLinkActive="active">Login</a>
-          <a md-list-item routerLink="not-found" routerLinkActive="active">Not-Found</a>
+          <ng-content></ng-content>
         </md-nav-list>
       </md-sidenav>
   `
 })
 export class SidebarComponent {
+  @Input() open = false;
 }

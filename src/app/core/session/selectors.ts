@@ -5,23 +5,23 @@ import '@ngrx/core/add/operator/select';
 import * as app from '../app-state/state';
 import * as session from './state';
 
-function initalized(state$: Observable<session.State>) {
+function _initalized(state$: Observable<session.State>) {
   return state$.select(s => s.initalized);
 }
 
-function loading(state$: Observable<session.State>) {
+function _loading(state$: Observable<session.State>) {
   return state$.select(s => s.isLoading);
 }
 
-function hasError(state$: Observable<session.State>) {
+function _hasError(state$: Observable<session.State>) {
   return state$.select(s => s.hasError);
 }
 
-function user(state$: Observable<session.State>) {
+function _user(state$: Observable<session.State>) {
   return state$.select(s => s.user);
 }
 
-function isAuthenticated(state$: Observable<session.State>) {
+function _isAuthenticated(state$: Observable<session.State>) {
   return state$.select(s => !!s.user);
 }
 
@@ -30,8 +30,8 @@ export function getSessionState(state$: Observable<app.State>) {
   return state$.select(state => state.session);
 }
 
-export const getInitalized = compose(initalized, getSessionState);
-export const getLoading = compose(loading, getSessionState);
-export const getHasError = compose(hasError, getSessionState);
-export const getUser = compose(user, getSessionState);
-export const getIsAuthenticated = compose(isAuthenticated, getSessionState);
+export const getInitalized = compose(_initalized, getSessionState);
+export const getLoading = compose(_loading, getSessionState);
+export const getHasError = compose(_hasError, getSessionState);
+export const getUser = compose(_user, getSessionState);
+export const getIsAuthenticated = compose(_isAuthenticated, getSessionState);

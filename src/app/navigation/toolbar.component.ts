@@ -11,7 +11,7 @@ import * as session from '../core/session';
   selector: 'toolbar',
   template:`
 <md-toolbar color="primary">
-  <button class="app-icon-button">
+  <button class="app-icon-button" (click)="openMenu.emit()">
     <i class="material-icons app-toolbar-menu">menu</i>
   </button>
   Angular2-Redux-Starter

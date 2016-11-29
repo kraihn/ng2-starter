@@ -2,7 +2,7 @@ import { SessionAction, ActionTypes } from './actions';
 import { State, initialState } from './state';
 
 
-export function authReducer(state = initialState, action: SessionAction): State {
+export function sessionReducer(state = initialState, action: SessionAction): State {
   switch(action.type) {
     case ActionTypes.LOGIN_WITH_GOOGLE:
     case ActionTypes.LOGIN_WITH_PASSWORD:

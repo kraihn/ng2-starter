@@ -12,10 +12,12 @@ import { combineReducers }  from '@ngrx/store';
 import * as app         from '../app-state';
 import * as router  from '@ngrx/router-store';
 import * as session    from '../session/reducer';
+import * as layout    from '../layout/reducer';
 
 const reducers = {
   router: router.routerReducer,
-  session: session.authReducer
+  session: session.sessionReducer,
+  layout: layout.layoutReducer
 };
 
 const developmentReducer: ActionReducer<app.State> = compose(storeFreeze, combineReducers)(reducers);
