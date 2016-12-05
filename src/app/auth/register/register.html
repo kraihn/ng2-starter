@@ -10,13 +10,10 @@
   </split-card-left>
 
   <split-card-right>
-    <credentials on-submit="register(email, password)" action="Register"></credentials>
-    <social-buttons onGoogleAuth="loginWithGoogle()"></social-buttons>
+    <auth-error *ngIf="hasError | async" [error]="error | async"></auth-error>
+    <credentials (onSubmit)="register($event)" action="Register"></credentials>
+    <social-buttons (onGoogleAuth)="loginWithGoogle()"></social-buttons>
     <p>If you are already a member, please <a routerLink="/login">Sign In</a></p>
   </split-card-right>
 
 </split-card>
-
-<div *ngIf="hasError | async">
-  {{ error | async }}
-</div>

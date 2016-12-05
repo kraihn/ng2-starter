@@ -5,6 +5,8 @@ import { Store }        from '@ngrx/store';
 
 import * as app         from '../../core';
 import * as session     from '../../core/session';
+import { Credential }   from '../credentials/credentials.component';
+
 
 @Component({
   selector: 'login-component',
@@ -23,11 +25,8 @@ export class LoginComponent {
     this.error = this.store.let(session.getError);
   }
 
-  loginWithPassword(email: string, password: string) {
-    this.store.dispatch(new session.LoginWithPasswordAction({
-      email,
-      password
-    }));
+  loginWithPassword(credential: Credential) {
+    this.store.dispatch( new session.LoginWithPasswordAction(credential) );
   }
 
   loginWithGoogle() {

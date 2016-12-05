@@ -5,6 +5,8 @@ import { Store }        from '@ngrx/store';
 
 import * as app         from '../../core';
 import * as session     from '../../core/session';
+import { Credential }   from '../credentials/credentials.component';
+
 
 @Component({
   selector: 'register',
@@ -18,10 +20,7 @@ export class RegisterComponent {
     this.isLoading = this.store.let(session.getLoading);
   }
 
-  register(email: string, password: string) {
-    this.store.dispatch(new session.RegisterAction({
-      email,
-      password
-    }));
+  register(credential: Credential) {
+    this.store.dispatch(new session.RegisterAction(credential));
   }
 }

@@ -1,4 +1,5 @@
 <split-card>
+
   <split-card-left>
     <card-splash imageUrl="http://i764.photobucket.com/albums/xx286/lightsatnight/night-time-cities-01.jpg">
       <card-splash-logo>
@@ -10,13 +11,11 @@
   </split-card-left>
 
   <split-card-right>
-    <credentials on-submit="loginWithPassword(email, password)" action="Login"></credentials>
-    <social-buttons onGoogleAuth="loginWithGoogle()"></social-buttons>
+    <auth-error *ngIf="hasError | async" [error]="error | async"></auth-error>
+    <credentials (onSubmit)="loginWithPassword($event)" action="Login"></credentials>
+    <social-buttons (onGoogleAuth)="loginWithGoogle()"></social-buttons>
     <p>Don't have an account, <a routerLink="/register">create one</a> today</p>
   </split-card-right>
 
 </split-card>
 
-<div *ngIf="hasError | async">
-  {{ error | async }}
-</div>

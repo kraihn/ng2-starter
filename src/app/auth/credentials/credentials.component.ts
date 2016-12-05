@@ -1,10 +1,10 @@
-import { Component, Input }   from '@angular/core';
+import { Component, Input, Output, EventEmitter }   from '@angular/core';
 import { Store }              from '@ngrx/store';
 
 import * as app               from '../../core';
 import * as session           from '../../core/session';
 
-class Credential {
+export class Credential {
   public email: string;
   public password: string;
 }
@@ -15,8 +15,12 @@ class Credential {
   styleUrls: ['credentials.scss']
 })
 export class CredentialsComponent {
-  @Input()
-  public action: string;
+  credential = new Credential();
+  @Input() action: string;
+  @Output() onSubmit = new EventEmitter();
 
-  public credential = new Credential();
+
+  public login(email: string, password: string) {
+    this.onSubmit.emit({ email, password });
+  }
 }

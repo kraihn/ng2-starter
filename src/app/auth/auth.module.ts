@@ -8,7 +8,8 @@ const components = [
   auth.LoginComponent,
   auth.RegisterComponent,
   auth.SocialButtonsComponent,
-  auth.CredentialsComponent
+  auth.CredentialsComponent,
+  auth.AuthErrorComponent
 ]
 
 @NgModule({

@@ -3,6 +3,7 @@
 
 :host {
   display: flex;
+  flex-direction: column;
 }
 
 .login__content {
@@ -28,7 +29,16 @@ md-card {
 }
 
 :host /deep/ split-card-right {
+  position: relative;
   box-sizing: border-box;
-  padding: 80px;
+  padding: 80px 50px;
   width: 400px;
+}
+
+auth-error {
+  padding: 20px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
