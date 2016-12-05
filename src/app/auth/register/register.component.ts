@@ -7,7 +7,9 @@ import * as app         from '../../core';
 import * as session     from '../../core/session';
 
 @Component({
-  template: require('./register.html')
+  selector: 'register',
+  template: require('./register.html'),
+  styleUrls: ['../login/login.scss']
 })
 export class RegisterComponent {
   isLoading: Observable<boolean>;

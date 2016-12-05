@@ -15,5 +15,8 @@ class Credential {
   styleUrls: ['credentials.scss']
 })
 export class CredentialsComponent {
+  @Input()
+  public action: string;
+
   public credential = new Credential();
 }

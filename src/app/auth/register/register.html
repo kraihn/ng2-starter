@@ -1,7 +1,22 @@
-    <div>
-      Email: <input #email type="text" />
-      Passwrod: <input #password type="password" />
-    </div>
-    <button (click)="register(email.value, password.value)">Register</button>
-    <social-buttons action="register"></social-buttons>
-    <p>If you are already a member, please <a href="">Sign In</a></p>
+<split-card>
+  <split-card-left>
+    <card-splash imageUrl="http://i764.photobucket.com/albums/xx286/lightsatnight/night-time-cities-01.jpg">
+      <card-splash-logo>
+        <md-icon>home</md-icon>
+      </card-splash-logo>
+      <card-splash-primary>Angular 2 - Redux - Firebase - Starter App</card-splash-primary>
+      <card-splash-secondary>Get started today creating an Angular2 App with Firebase and Redux. Life has never been so good</card-splash-secondary>
+    </card-splash>
+  </split-card-left>
+
+  <split-card-right>
+    <credentials on-submit="register(email, password)" action="Register"></credentials>
+    <social-buttons onGoogleAuth="loginWithGoogle()"></social-buttons>
+    <p>If you are already a member, please <a routerLink="/login">Sign In</a></p>
+  </split-card-right>
+
+</split-card>
+
+<div *ngIf="hasError | async">
+  {{ error | async }}
+</div>
