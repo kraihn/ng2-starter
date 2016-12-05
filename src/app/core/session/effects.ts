@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Effect, Actions } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +17,10 @@ import * as session from './actions';
 @Injectable()
 export class SessionEffects {
 
-  constructor(private actions$: Actions, private af: AngularFire) { }
+  constructor(
+    private router: Router,
+    private actions$: Actions,
+    private af: AngularFire) { }
 
   @Effect()
   loginWithPassword$: Observable<Action> = this.actions$
@@ -28,6 +33,13 @@ export class SessionEffects {
         .map(authState => new session.LoginCompleteAction())
         .catch((error) => of(new session.LoginErrorAction(error)));
     });
+
+  @Effect({ dispatch: false })
+    loginSuccess$: Observable<Action> = this.actions$
+      .ofType(session.ActionTypes.LOGIN_COMPLETE, session.ActionTypes.REGISTER_COMPLETE)
+      .do(() => {
+        this.router.navigate(['/home']);
+      });
 
   @Effect()
   register$: Observable<Action> = this.actions$
@@ -56,6 +68,7 @@ export class SessionEffects {
     .ofType(session.ActionTypes.LOGOUT)
     .do(() => {
       this.af.auth.logout();
+      this.router.navigate(['/login']);
     });
 }
 

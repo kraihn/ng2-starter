@@ -9,12 +9,12 @@ import * as layout from '../core/layout';
 @Component({
   template: `
     <md-sidenav-layout fullscreen>
-      <sidebar [open]="showSidenav$ | async">
+      <sidebar [open]="showSidenav$ | async" (onCloseMenu)="closeSidenav()" >
         <a md-list-item (click)="closeSidenav()" routerLink="/home" routerLinkActive="active">Home</a>
         <a md-list-item (click)="closeSidenav()" routerLink="/login" routerLinkActive="active">Login</a>
         <a md-list-item (click)="closeSidenav()" routerLink="/not-found" routerLinkActive="active">Not-Found</a>
       </sidebar>
-      <toolbar (openMenu)="openSidenav()"></toolbar>
+      <toolbar (onOpenMenu)="openSidenav()"></toolbar>
       <router-outlet></router-outlet>
     </md-sidenav-layout>
   `

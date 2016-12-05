@@ -11,7 +11,7 @@ import * as session from '../core/session';
   selector: 'toolbar',
   template:`
     <md-toolbar color="primary">
-      <button md-icon-button (click)="openMenu.emit()">
+      <button md-icon-button (click)="openMenu()">
         <md-icon>menu</md-icon>
       </button>
       <span>Angular2-Redux-Starter</span>
@@ -23,11 +23,15 @@ import * as session from '../core/session';
 export class ToolbarComponent {
   @Input() isAuthenticated: Observable<boolean>;
   @Input() user: Observable<session.User>;
-  @Output() openMenu = new EventEmitter();
+  @Output() onOpenMenu = new EventEmitter();
 
   constructor(private store: Store<app.State>) {
     this.user = this.store.let(session.getUser);
     this.isAuthenticated = this.store.let(session.getIsAuthenticated);
+  }
+
+  openMenu() {
+    this.onOpenMenu.emit();
   }
 
   logout() {
