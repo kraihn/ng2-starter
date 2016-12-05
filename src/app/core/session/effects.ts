@@ -11,7 +11,6 @@ import 'rxjs/add/operator/catch';
 import { AngularFire, FirebaseAuthState, AuthProviders, AuthMethods } from 'angularfire2';
 
 import * as session from './actions';
-import * as util from './util';
 
 @Injectable()
 export class SessionEffects {
@@ -27,7 +26,7 @@ export class SessionEffects {
 
       return fromPromise(afLogin as Promise<FirebaseAuthState>)
         .map(authState => new session.LoginCompleteAction())
-        .catch((error) => of(new session.LoginErrorAction(util.mapToError(error))));
+        .catch((error) => of(new session.LoginErrorAction(error)));
     });
 
   @Effect()
@@ -39,7 +38,7 @@ export class SessionEffects {
 
       return fromPromise(afLogin as Promise<FirebaseAuthState>)
         .map(authState => new session.RegisterCompleteAction())
-        .catch((error) => of(new session.RegisterError(util.mapToError(error))));
+        .catch((error) => of(new session.RegisterError(error)));
     });
 
   @Effect({ dispatch: false })

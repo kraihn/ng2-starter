@@ -1,0 +1,22 @@
+<split-card>
+  <split-card-left>
+    <card-splash imageUrl="http://i764.photobucket.com/albums/xx286/lightsatnight/night-time-cities-01.jpg">
+      <card-splash-logo>
+        <md-icon>home</md-icon>
+      </card-splash-logo>
+      <card-splash-primary>Angular 2 - Redux - Firebase - Starter App</card-splash-primary>
+      <card-splash-secondary>Get started today creating an Angular2 App with Firebase and Redux. Life has never been so good</card-splash-secondary>
+    </card-splash>
+  </split-card-left>
+
+  <split-card-right>
+    <credentials on-submit="loginWithPassword(email, password)"></credentials>
+    <social-buttons onGoogleAuth="loginWithGoogle()"></social-buttons>
+    <p>Don't have an account, <a routerLink="/register">create one</a> today</p>
+  </split-card-right>
+
+</split-card>
+
+<div *ngIf="hasError | async">
+  {{ error | async }}
+</div>

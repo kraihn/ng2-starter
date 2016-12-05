@@ -1,0 +1,7 @@
+    <div>
+      Email: <input #email type="text" />
+      Passwrod: <input #password type="password" />
+    </div>
+    <button (click)="register(email.value, password.value)">Register</button>
+    <social-buttons action="register"></social-buttons>
+    <p>If you are already a member, please <a href="">Sign In</a></p>

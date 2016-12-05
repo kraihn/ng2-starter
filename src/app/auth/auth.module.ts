@@ -7,7 +7,8 @@ import * as auth              from './';
 const components = [
   auth.LoginComponent,
   auth.RegisterComponent,
-  auth.SocialButtonsComponent
+  auth.SocialButtonsComponent,
+  auth.CredentialsComponent
 ]
 
 @NgModule({

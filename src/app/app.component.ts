@@ -9,7 +9,8 @@ import * as sessionUtil    from './core/session/util';
 
 @Component({
   selector: 'app-root',
-  template:`<router-outlet></router-outlet>`
+  template:`<router-outlet></router-outlet>`,
+  styles: [':host { flex: 1 1; display: flex; }']
 })
 export class AppComponent {
   constructor(store: Store<app.State>, af: AngularFire) {

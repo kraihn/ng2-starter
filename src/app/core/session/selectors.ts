@@ -25,6 +25,10 @@ function _isAuthenticated(state$: Observable<session.State>) {
   return state$.select(s => !!s.user);
 }
 
+function _error(state$: Observable<session.State>) {
+  return state$.select(s => s.error);
+}
+
 
 export function getSessionState(state$: Observable<app.State>) {
   return state$.select(state => state.session);
@@ -33,5 +37,6 @@ export function getSessionState(state$: Observable<app.State>) {
 export const getInitalized = compose(_initalized, getSessionState);
 export const getLoading = compose(_loading, getSessionState);
 export const getHasError = compose(_hasError, getSessionState);
+export const getError = compose(_error, getSessionState);
 export const getUser = compose(_user, getSessionState);
 export const getIsAuthenticated = compose(_isAuthenticated, getSessionState);

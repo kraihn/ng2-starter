@@ -1,3 +1,4 @@
-export * from './login.component';
-export * from './register.component';
-export * from './social-buttons.component';
+export * from './login/login.component';
+export * from './register/register.component';
+export * from './credentials/credentials.component';
+export * from './social-buttons/social-buttons.component';

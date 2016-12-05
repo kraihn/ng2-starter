@@ -1,0 +1,19 @@
+@import '~@angular/material/core/theming/theming';
+@import '../../../app-theme.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+[md-raised-button] {
+  background-color: md-color($accent);
+  font-weight: 300;
+  color: #ffffff;
+  flex: 1 1;
+}
+
+p {
+  color: rgba(0,0,0, 0.54);
+  font-weight: 300;
+}

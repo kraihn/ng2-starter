@@ -27,6 +27,7 @@ export function sessionReducer(state = initialState, action: SessionAction): Sta
 
     case ActionTypes.REGISTER_ERROR:
     case ActionTypes.LOGIN_ERROR: {
+      console.log(action.payload);
       return Object.assign({}, state, {
         isLoading: false,
         hasError: true,

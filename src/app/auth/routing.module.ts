@@ -1,10 +1,10 @@
-import { NgModule }            from '@angular/core';
-import { RouterModule, Routes }        from '@angular/router';
-import { SharedModule }       from '../shared/shared.module';
+import { NgModule }               from '@angular/core';
+import { RouterModule, Routes }   from '@angular/router';
+import { SharedModule }           from '../shared/shared.module';
 
 
 import { MinimalLayoutComponent } from '../layouts'
-import * as auth from './';
+import * as auth                  from './';
 
 const routes: Routes = [
     { path: 'login', component: MinimalLayoutComponent, children: [
