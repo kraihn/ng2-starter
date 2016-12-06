@@ -1,2 +1,2 @@
-<img [src]="user?.photoURL" *ngIf="user?.photoURL" />
-<span *ngIf="!user?.photoURL">{{initials}}</span>
+<img [src]="user.photoURL" *ngIf="!!hasPhoto" />
+<span class="initials" *ngIf="!hasPhoto">{{initials}}</span>

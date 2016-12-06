@@ -12,5 +12,4 @@ export class SidebarComponent {
   closeMenu() {
     this.onCloseMenu.emit();
   }
-
 }

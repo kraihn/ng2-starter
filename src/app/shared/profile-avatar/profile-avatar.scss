@@ -9,11 +9,18 @@
   font-size: 14px;
   text-align: center;
   font-weight: 300;
+  text-transform: uppercase;
 
   img {
     height: 32px;
     width: 32px;
     border-radius: 50%;
+  }
+
+  .initials {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -22,7 +29,7 @@
   height: 56px;
   width: 56px;
   line-height: 56px;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 100;
 
   img {
