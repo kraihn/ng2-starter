@@ -5,7 +5,8 @@ import * as navigation           from './';
 
 const components = [
   navigation.SidebarComponent,
-  navigation.ToolbarComponent
+  navigation.ToolbarComponent,
+  navigation.ToolbarProfile
 ]
 
 @NgModule({

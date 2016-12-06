@@ -5,6 +5,7 @@ import { MaterialModule }      from '@angular/material';
 
 import * as SplitCard from './split-card/split-card.component';
 import * as CardSplash from './card-splash/card-splash.component';
+import * as ProfileAvatar from './profile-avatar/profile-avatar';
 
 const components = [
   SplitCard.SplitCard,
@@ -14,6 +15,7 @@ const components = [
   CardSplash.CardSplashLogo,
   CardSplash.CardSplashPrimary,
   CardSplash.CardSplashSecondary,
+  ProfileAvatar.ProfileAvatar
 ];
 
 @NgModule({

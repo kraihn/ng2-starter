@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+  <button class="toolbar__menu" md-icon-button (click)="openMenu()">
+    <md-icon>menu</md-icon>
+  </button>
+  <span class="toolbar__title">Angular2-Redux-Starter</span>
+  <span class="toolbar__spacer"></span>
+
+  <profile-avatar class="toolbar__user" [user]="user | async" [md-menu-trigger-for]="menu"></profile-avatar>
+
+  <md-menu class="toolbar__usermenu" #menu="mdMenu" x-position="before" y-position="below">
+    <toolbar-profile [user]="user | async" (onSignout)="logout()">Sign Out</toolbar-profile>
+  </md-menu>
+</md-toolbar>

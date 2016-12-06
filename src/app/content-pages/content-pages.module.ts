@@ -6,7 +6,8 @@ import * as contentPages      from './';
 
 const components = [
   contentPages.HomeComponent,
-  contentPages.NotFoundComponent
+  contentPages.NotFoundComponent,
+  contentPages.ProtectedComponent
 ];
 
 @NgModule({

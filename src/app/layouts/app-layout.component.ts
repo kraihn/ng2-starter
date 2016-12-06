@@ -13,6 +13,7 @@ import * as layout from '../core/layout';
         <a md-list-item (click)="closeSidenav()" routerLink="/home" routerLinkActive="active">Home</a>
         <a md-list-item (click)="closeSidenav()" routerLink="/login" routerLinkActive="active">Login</a>
         <a md-list-item (click)="closeSidenav()" routerLink="/not-found" routerLinkActive="active">Not-Found</a>
+        <a md-list-item (click)="closeSidenav()" routerLink="/protected" routerLinkActive="active">Protected</a>
       </sidebar>
       <toolbar (onOpenMenu)="openSidenav()"></toolbar>
       <router-outlet></router-outlet>
@@ -24,7 +25,7 @@ export class AppLayoutComponent {
   showSidenav$: Observable<boolean>;
 
   constructor(private store: Store<app.State>) {
-    this.showSidenav$ = this.store.let(layout.getShowSidenav);
+    this.showSidenav$ = this.store.select(layout.getShowSidenav);
   }
 
   closeSidenav() {

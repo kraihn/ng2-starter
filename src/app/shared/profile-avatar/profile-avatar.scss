@@ -1,0 +1,33 @@
+:host {
+  background-color: #ffffff;
+  color: black;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  margin: 16px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+
+  img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+  }
+}
+
+:host(.large) {
+  background-color: #e3e3e3;
+  height: 56px;
+  width: 56px;
+  line-height: 56px;
+  font-size: 28px;
+  font-weight: 100;
+
+  img {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+  }
+}

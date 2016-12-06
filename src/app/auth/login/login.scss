@@ -28,6 +28,10 @@ md-card {
   padding: 60px 80px 100px;
 }
 
+md-icon {
+  color: #ffffff;
+}
+
 :host /deep/ split-card-right {
   position: relative;
   box-sizing: border-box;

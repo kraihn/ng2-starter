@@ -21,7 +21,7 @@ export class LoginComponent {
   isLoading: Observable<boolean>;
 
   constructor(private store: Store<app.State>) {
-    this.isLoading = this.store.let(session.getLoading);
+    this.isLoading = this.store.select(session.getLoading);
   }
 
   login(email: string, password: string) {

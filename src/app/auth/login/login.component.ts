@@ -20,9 +20,9 @@ export class LoginComponent {
   error: Observable<session.Error>;
 
   constructor(private store: Store<app.State>) {
-    this.isLoading = this.store.let(session.getLoading);
-    this.hasError = this.store.let(session.getHasError);
-    this.error = this.store.let(session.getError);
+    this.isLoading = this.store.select(session.getLoading);
+    this.hasError = this.store.select(session.getHasError);
+    this.error = this.store.select(session.getError);
   }
 
   loginWithPassword(credential: Credential) {

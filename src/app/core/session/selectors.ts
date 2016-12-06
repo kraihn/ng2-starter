@@ -1,3 +1,4 @@
+import { createSelector } from 'reselect';
 import { compose } from '@ngrx/core/compose';
 import { Observable } from 'rxjs/Observable';
 import '@ngrx/core/add/operator/select';
@@ -5,38 +6,19 @@ import '@ngrx/core/add/operator/select';
 import * as app from '../app-state/state';
 import * as session from './state';
 
-function _initalized(state$: Observable<session.State>) {
-  return state$.select(s => s.initalized);
-}
 
-function _loading(state$: Observable<session.State>) {
-  return state$.select(s => s.isLoading);
-}
-
-function _hasError(state$: Observable<session.State>) {
-  return state$.select(s => s.hasError);
-}
-
-function _user(state$: Observable<session.State>) {
-  return state$.select(s => s.user);
-}
-
-function _isAuthenticated(state$: Observable<session.State>) {
-  return state$.select(s => !!s.user);
-}
-
-function _error(state$: Observable<session.State>) {
-  return state$.select(s => s.error);
-}
+const _initalized = (state: session.State) => state.initalized;
+const _loading = (state: session.State) => state.isLoading;
+const _hasError = (state: session.State) => state.hasError;
+const _user = (state: session.State) => state.user;
+const _isAuthenticated = (state: session.State) => !!state.user;
+const _error = (state: session.State) => state.error;
 
 
-export function getSessionState(state$: Observable<app.State>) {
-  return state$.select(state => state.session);
-}
-
-export const getInitalized = compose(_initalized, getSessionState);
-export const getLoading = compose(_loading, getSessionState);
-export const getHasError = compose(_hasError, getSessionState);
-export const getError = compose(_error, getSessionState);
-export const getUser = compose(_user, getSessionState);
-export const getIsAuthenticated = compose(_isAuthenticated, getSessionState);
+export const getSessionState = (state$: app.State) => state$.session;
+export const getInitalized = createSelector(getSessionState, _initalized);
+export const getLoading = createSelector(getSessionState, _loading, );
+export const getHasError = createSelector(getSessionState, _hasError);
+export const getError = createSelector(getSessionState, _error);
+export const getUser = createSelector(getSessionState, _user);
+export const getIsAuthenticated = createSelector(getSessionState, _isAuthenticated);

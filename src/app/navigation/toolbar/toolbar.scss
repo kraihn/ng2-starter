@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14),0 3px 3px -2px rgba(0,0,0,0.12),0 1px 8px 0 rgba(0,0,0,0.2);
+}
+
+.toolbar__title {
+  font-weight: 300;
+}
+
+.toolbar__spacer {
+  flex: 1 1;
+}
+
+.toolbar__user {
+  cursor: pointer;
+}
+
+:host /deep/ md-toolbar {
+  min-height: 48px;
+
+  md-toolbar-row {
+    height: 48px;
+  }
+}
+

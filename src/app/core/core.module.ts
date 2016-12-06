@@ -12,8 +12,9 @@ import { AngularFireModule,
   AuthProviders, AuthMethods }  from 'angularfire2';
 
 
-import { reducer }      from './app-state';
-import { SessionEffects }  from './session/effects';
+import { reducer }          from './app-state';
+import { SessionEffects }   from './session/effects';
+import { AuthGuard }        from './auth-guard';
 
 export const firebaseConfig = {
   apiKey:             'AIzaSyAxdlAOBNgnJg4xkcD7PcZxKeKk7UH15SI',
@@ -37,11 +38,16 @@ const imports = [
   AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
 ];
 
+const providers = [
+  AuthGuard
+]
+
 @NgModule({
   imports: imports,
   exports: [
     AngularFireModule
-  ]
+  ],
+  providers: [ ...providers ]
 })
 export class CoreModule {
 

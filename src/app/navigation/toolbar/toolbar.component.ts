@@ -4,21 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/let';
 
-import * as app from '../core';
-import * as session from '../core/session';
+import * as app from '../../core';
+import * as session from '../../core/session';
 
 @Component({
   selector: 'toolbar',
-  template:`
-    <md-toolbar color="primary">
-      <button md-icon-button (click)="openMenu()">
-        <md-icon>menu</md-icon>
-      </button>
-      <span>Angular2-Redux-Starter</span>
-      <span>{{ (user | async)?.email }}</span>
-      <button *ngIf="isAuthenticated | async" (click)="logout()">Logout</button>
-    </md-toolbar>
-  `
+  template: require('./toolbar.html'),
+  styleUrls: ['./toolbar.scss']
 })
 export class ToolbarComponent {
   @Input() isAuthenticated: Observable<boolean>;
@@ -26,8 +18,8 @@ export class ToolbarComponent {
   @Output() onOpenMenu = new EventEmitter();
 
   constructor(private store: Store<app.State>) {
-    this.user = this.store.let(session.getUser);
-    this.isAuthenticated = this.store.let(session.getIsAuthenticated);
+    this.user = this.store.select(session.getUser);
+    this.isAuthenticated = this.store.select(session.getIsAuthenticated);
   }
 
   openMenu() {

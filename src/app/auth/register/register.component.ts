@@ -1,4 +1,3 @@
-import 'rxjs/add/operator/let';
 import { Component }    from '@angular/core';
 import { Observable }   from 'rxjs/Observable';
 import { Store }        from '@ngrx/store';
@@ -15,9 +14,13 @@ import { Credential }   from '../credentials/credentials.component';
 })
 export class RegisterComponent {
   isLoading: Observable<boolean>;
+  hasError: Observable<boolean>;
+  error: Observable<session.Error>;
 
   constructor(private store: Store<app.State>) {
-    this.isLoading = this.store.let(session.getLoading);
+    this.isLoading = this.store.select(session.getLoading);
+    this.hasError = this.store.select(session.getHasError);
+    this.error = this.store.select(session.getError);
   }
 
   register(credential: Credential) {

@@ -9,7 +9,8 @@ export const mapToUser = (auth): User => {
     uid: auth.uid,
     provider: AuthProviders[auth.provider],
     name: auth.auth.displayName,
-    email: auth.auth.email
+    email: auth.auth.email,
+    photoURL: auth.auth.photoURL
   };
 };
 

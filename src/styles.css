@@ -5,3 +5,7 @@ body {
   flex-direction: column;
   display: flex;
 }
+
+.toolbar__usermenu {
+  max-width: inherit;
+}

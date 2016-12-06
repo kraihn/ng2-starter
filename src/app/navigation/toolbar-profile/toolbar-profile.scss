@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+  height: inherit;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  width: 280px;
+}
+
+.details {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  padding: 16px 0;
+  justify-content: space-around;
+  font-weight: 400;
+}
+
+.email {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 172px;
+}
+.signout {
+  color: #03a9f4;
+  text-transform: uppercase;
+  cursor: pointer;
+}
