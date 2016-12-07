@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import 'rxjs/add/operator/let';
+import 'rxjs/add/operator/single';
 
 import * as app from '../../core';
 import * as layout from '../../core/layout';
@@ -12,7 +12,6 @@ import * as layout from '../../core/layout';
   styleUrls: ['./app-layout.scss']
 })
 export class AppLayoutComponent {
-
   showSidenav$: Observable<boolean>;
 
   constructor(private store: Store<app.State>) {
@@ -27,4 +26,7 @@ export class AppLayoutComponent {
     this.store.dispatch(new layout.OpenSidenavAction());
   }
 
+  toogleSidenav(isOpen: boolean) {
+    isOpen ? this.closeSidenav() : this.openSidenav();
+  }
 }

@@ -1,10 +1,15 @@
     <md-sidenav-layout fullscreen>
-      <sidebar mode="side" [open]="showSidenav$ | async" (onCloseMenu)="closeSidenav()" >
-        <a md-list-item (click)="closeSidenav()" routerLink="/home" routerLinkActive="active">Home</a>
-        <a md-list-item (click)="closeSidenav()" routerLink="/login" routerLinkActive="active">Login</a>
-        <a md-list-item (click)="closeSidenav()" routerLink="/not-found" routerLinkActive="active">Not-Found</a>
-        <a md-list-item (click)="closeSidenav()" routerLink="/protected" routerLinkActive="active">Protected</a>
+      <sidebar #sidenav mode="push" [open]="showSidenav$ | async" (onCloseMenu)="closeSidenav()" >
+        <nav-group class="nav-group--top">
+          <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home">Home</nav-item>
+          <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
+          <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
+        </nav-group>
+
+        <nav-group title="auth">
+          <nav-item (onNavigate)="closeSidenav()" route="/login" icon="input">Login</nav-item>
+        </nav-group>
       </sidebar>
-      <toolbar (onOpenMenu)="openSidenav()"></toolbar>
+      <toolbar (onOpenMenu)="toogleSidenav(sidenav.open)"></toolbar>
       <router-outlet></router-outlet>
     </md-sidenav-layout>

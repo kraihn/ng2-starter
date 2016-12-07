@@ -1,0 +1,8 @@
+<button class="nav-item__button" (click)="onClick()" md-button [routerLink]="route" routerLinkActive="nav-item--active__button">
+  <div class="nav-item">
+    <md-icon class="nav-item__icon">{{ icon }}</md-icon>
+    <span class="nav-item__text">
+      <ng-content></ng-content>
+    </span>
+  </div>
+</button>
