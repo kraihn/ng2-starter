@@ -2,9 +2,14 @@
     box-sizing: border-box;
 }
 
+:host(.nav-item--with-menu) {
+    margin-right: 44px;
+}
+
 .nav-item__button {
     margin: 0;
     height: 32px;
+    min-height: 36px;
     min-width: 0;
     overflow: visible;
     width: 100%;

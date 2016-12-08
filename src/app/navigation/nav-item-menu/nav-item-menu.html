@@ -1,0 +1,7 @@
+<button class="nav-item-menu__button" md-icon-button [md-menu-trigger-for]="menu">
+  <md-icon class="nav-item-menu__icon">{{ icon }}</md-icon>
+</button>
+<md-menu #menu="mdMenu">
+  <ng-content>
+  </ng-content>
+</md-menu>

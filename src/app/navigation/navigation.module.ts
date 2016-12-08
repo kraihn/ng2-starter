@@ -8,7 +8,8 @@ const components = [
   navigation.SidebarComponent,
   navigation.ToolbarComponent,
   navigation.NavGroupComponent,
-  navigation.NavItemComponent
+  navigation.NavItemComponent,
+  navigation.NavItemMenu
 ]
 
 @NgModule({

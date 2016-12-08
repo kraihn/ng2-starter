@@ -1,5 +1,20 @@
     <md-sidenav-layout fullscreen>
-      <sidebar #sidenav mode="push" [open]="showSidenav$ | async" (onCloseMenu)="closeSidenav()" >
+      <!--<sidebar #sidenav mode="push" [open]="showSidenav$ | async" (onCloseMenu)="closeSidenav()" >-->
+      <sidebar #sidenav mode="push" open="true" (onCloseMenu)="closeSidenav()" >
+        <nav-group class="nav-group--root">
+          <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home" class="nav-item--with-menu">
+            Home
+          </nav-item>
+          <nav-item-menu icon="settings">
+            <button md-menu-item (click)="closeSidenav()"> Refresh </button>
+            <button md-menu-item (click)="closeSidenav()"> Settings </button>
+          </nav-item-menu>
+        </nav-group>
+
+        <nav-group>
+          <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
+          <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
+        </nav-group>
         <nav-group class="nav-group--top">
           <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home">Home</nav-item>
           <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>

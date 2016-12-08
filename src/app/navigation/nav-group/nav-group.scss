@@ -16,6 +16,13 @@
   margin-top: 12px;
 }
 
+:host(.nav-group--root) {
+  background: #fafafa;
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.12) inset!important;
+  position: relative;
+  padding: 10px 0;
+}
+
 .nav-group__title {
   box-sizing: border-box;
   flex-shrink: 0;
