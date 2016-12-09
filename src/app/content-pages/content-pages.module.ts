@@ -5,7 +5,7 @@ import { RoutingModule }      from './routing.module';
 import * as contentPages      from './';
 
 const components = [
-  contentPages.HomeComponent,
+  contentPages.HomePage,
   contentPages.NotFoundComponent,
   contentPages.ProtectedComponent
 ];

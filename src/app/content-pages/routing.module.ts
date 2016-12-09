@@ -7,7 +7,7 @@ import * as layouts           from '../layouts';
 
 const routes = [
    { path: 'home', component: layouts.AppLayoutComponent, children: [
-      { path: '', component: contentPages.HomeComponent }
+      { path: '', component: contentPages.HomePage }
     ]},
     { path: 'not-found', component: layouts.AppLayoutComponent, children: [
       { path: '', component: contentPages.NotFoundComponent }
