@@ -22,7 +22,6 @@
   &:hover {
     .nav-item-menu__icon {
       position: relative;
-      -webkit-transform: translateX(-4px) rotate(-20deg);
       transform: translateX(-4px) rotate(-20deg);
       transition: transform .15s ease;
     }
@@ -49,4 +48,19 @@
   line-height: 1;
 
   transition: transform .15s ease;
+}
+
+:host-context(.sidenav--collapsed)  {
+  position: relative;
+  top: 0;
+
+  .nav-item-menu__button {
+    width: 100%;
+    padding: 0 16px;
+    margin: 0;
+
+    &:hover::after {
+      border-radius: 0;
+    }
+  }
 }

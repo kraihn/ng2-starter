@@ -4,16 +4,27 @@ import { State, initialState } from './state';
 export function layoutReducer(state = initialState, action: LayoutAction): State {
   switch (action.type) {
     case ActionTypes.CLOSE_SIDENAV:
-      return {
-        showSidenav: false
-      };
+      return Object.assign({}, state, {
+        show: false
+      });
 
     case ActionTypes.OPEN_SIDENAV:
-      return {
-        showSidenav: true
-      };
+      return Object.assign({}, state, {
+        show: true
+      });
+
+    case ActionTypes.EXPAND_SIDENAV:
+      return Object.assign({}, state, {
+        expand: true
+      });
+
+    case ActionTypes.COLLAPSE_SIDENAV:
+      return Object.assign({}, state, {
+        expand: false
+      });
 
     default:
       return state;
   }
 }
+

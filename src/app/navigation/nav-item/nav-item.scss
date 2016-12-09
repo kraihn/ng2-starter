@@ -38,10 +38,32 @@
 
 .nav-item__text {
     padding-left: 16px;
+    opacity: 1;
+    transition: opacity .3s ease;
 }
 
 .nav-item__icon {
   font-size: 20px;
   height: 1em;
   width: 1em;
+}
+
+:host-context(.sidenav--collapsed)  {
+  .nav-item__text {
+    opacity: 0;
+    transition: opacity .3s ease;
+    display: none;
+  }
+
+  .nav-item__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+:host-context(.sidenav--collapsed) :host(.nav-item--with-menu) {
+  margin-right: 0;
+}
+:host-context(.sidenav--collapsed) {
+  margin-right: 0;
 }

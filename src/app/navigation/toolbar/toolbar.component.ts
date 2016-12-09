@@ -15,7 +15,7 @@ import * as session from '../../core/session';
 export class ToolbarComponent {
   @Input() isAuthenticated: Observable<boolean>;
   @Input() user: Observable<session.User>;
-  @Output() onOpenMenu = new EventEmitter();
+  @Output() onMenuToogle = new EventEmitter();
 
   constructor(private store: Store<app.State>) {
     this.user = this.store.select(session.getUser);
@@ -23,7 +23,7 @@ export class ToolbarComponent {
   }
 
   openMenu() {
-    this.onOpenMenu.emit();
+    this.onMenuToogle.emit();
   }
 
   logout() {

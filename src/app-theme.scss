@@ -3,7 +3,7 @@
 
 @include md-core();
 
-$primary: md-palette($md-light-blue);
+$primary: md-palette($md-light-blue, 700, 600, 50);
 $accent:  md-palette($md-deep-orange, A200, A100, A400);
 $warn: md-palette($md-red);
 

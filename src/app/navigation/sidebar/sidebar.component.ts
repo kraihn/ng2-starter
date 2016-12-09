@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'sidebar',
@@ -6,10 +6,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./sidebar.scss']
 })
 export class SidebarComponent {
-  @Input() open = false;
-  @Output() onCloseMenu = new EventEmitter();
+  @Input() open;
+  @Input() expansion;
 
-  closeMenu() {
-    this.onCloseMenu.emit();
+  @HostBinding('class.sidemenu--collapsed') get Minimized() {
+    return !this.expansion;
+  }
+
+  @Output() onExpansionChanged = new EventEmitter();
+
+  toggleExpansion() {
+    this.onExpansionChanged.emit();
   }
 }

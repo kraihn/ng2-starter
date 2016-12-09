@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/single';
+import 'rxjs/add/operator/take';
 
 import * as app from '../../core';
 import * as layout from '../../core/layout';
@@ -12,10 +13,12 @@ import * as layout from '../../core/layout';
   styleUrls: ['./app-layout.scss']
 })
 export class AppLayoutComponent {
-  showSidenav$: Observable<boolean>;
+  sidenavShow$: Observable<boolean>;
+  sidenavExpand$: Observable<boolean>;
 
   constructor(private store: Store<app.State>) {
-    this.showSidenav$ = this.store.select(layout.getShowSidenav);
+    this.sidenavShow$ = this.store.select(layout.getShow);
+    this.sidenavExpand$ = this.store.select(layout.getExpand);
   }
 
   closeSidenav() {
@@ -26,7 +29,26 @@ export class AppLayoutComponent {
     this.store.dispatch(new layout.OpenSidenavAction());
   }
 
-  toogleSidenav(isOpen: boolean) {
+  expandSidenav() {
+    this.store.dispatch(new layout.ExpandSidenavAction());
+  }
+
+  collapseSidenav() {
+    this.store.dispatch(new layout.CollapseSidenavAction());
+  }
+
+  toogleSidenav() {
+    let isOpen: boolean;
+    this.store.take(1).subscribe(state => isOpen = state.layout.show);
+
     isOpen ? this.closeSidenav() : this.openSidenav();
+  }
+
+  toggleExpansion() {
+    let isExpanded: boolean;
+    this.store.take(1).subscribe(state => isExpanded = state.layout.expand);
+
+    isExpanded ? this.collapseSidenav() : this.expandSidenav();
+
   }
 }

@@ -1,7 +1,9 @@
 export interface State {
-  showSidenav: boolean;
+  show: boolean;
+  expand: boolean;
 }
 
 export const initialState: State = {
-  showSidenav: false,
+  show: false,
+  expand: true,
 };

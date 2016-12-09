@@ -8,6 +8,7 @@ const components = [
   navigation.SidebarComponent,
   navigation.ToolbarComponent,
   navigation.NavGroupComponent,
+  navigation.NavGroupHeaderComponent,
   navigation.NavItemComponent,
   navigation.NavItemMenu
 ]

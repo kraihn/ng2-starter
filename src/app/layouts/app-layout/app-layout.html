@@ -1,30 +1,42 @@
-    <md-sidenav-layout fullscreen>
-      <!--<sidebar #sidenav mode="push" [open]="showSidenav$ | async" (onCloseMenu)="closeSidenav()" >-->
-      <sidebar #sidenav mode="push" open="true" (onCloseMenu)="closeSidenav()" >
-        <nav-group class="nav-group--root">
-          <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home" class="nav-item--with-menu">
-            Home
-          </nav-item>
-          <nav-item-menu icon="settings">
-            <button md-menu-item (click)="closeSidenav()"> Refresh </button>
-            <button md-menu-item (click)="closeSidenav()"> Settings </button>
-          </nav-item-menu>
-        </nav-group>
+<toolbar (onMenuToogle)="toogleSidenav(sidenav.open)"></toolbar>
+<md-sidenav-layout class="sidenav__layout">
+  <md-sidenav #sidenav [opened]="sidenavShow$ | async" mode="side" class="sidenav" [class.sidenav--collapsed]="sidenavExpand$ | async">
+    <md-nav-list class="sidenav__list">
+      <nav-group class="nav-group--root">
+        <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home" class="nav-item--with-menu">
+          Home
+        </nav-item>
+        <nav-item-menu icon="settings">
+          <button md-menu-item (click)="closeSidenav()"> Refresh </button>
+          <button md-menu-item (click)="closeSidenav()"> Settings </button>
+        </nav-item-menu>
+      </nav-group>
 
-        <nav-group>
-          <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
-          <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
-        </nav-group>
-        <nav-group class="nav-group--top">
-          <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home">Home</nav-item>
-          <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
-          <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
-        </nav-group>
+      <nav-group class="nav-group--top">
+        <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
+        <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
+      </nav-group>
 
-        <nav-group title="auth">
-          <nav-item (onNavigate)="closeSidenav()" route="/login" icon="input">Login</nav-item>
-        </nav-group>
-      </sidebar>
-      <toolbar (onOpenMenu)="toogleSidenav(sidenav.open)"></toolbar>
-      <router-outlet></router-outlet>
-    </md-sidenav-layout>
+      <nav-group>
+        <nav-group-header>
+          Other
+        </nav-group-header>
+        <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home">Home</nav-item>
+        <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
+        <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
+      </nav-group>
+
+      <nav-group>
+        <nav-group-header>
+          Auth
+        </nav-group-header>
+        <nav-item (onNavigate)="closeSidenav()" route="/login" icon="input">Login</nav-item>
+      </nav-group>
+    </md-nav-list>
+    <span class="sidenav__spacer"></span>
+    <button md-button disableRipple="true" class="sidenav__expando" (click)="toggleExpansion()">
+      <md-icon>chevron_left</md-icon>
+    </button>
+  </md-sidenav>
+  <router-outlet></router-outlet>
+</md-sidenav-layout>

@@ -21,18 +21,14 @@
   box-shadow: 0 -1px 0 rgba(0,0,0,0.12) inset!important;
   position: relative;
   padding: 10px 0;
+  transition: box-shadow .3s ease,padding .3s ease,width .3s cubic-bezier(0.4,0.0,0.2,1);
 }
 
-.nav-group__title {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  padding: 0 24px;
-  overflow: hidden;
-  cursor: default;
-  color: rgba(0,0,0,0.38);
-  font-size: 12px;
-  line-height: 24px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  height: 32px;
+:host-context(.sidenav--collapsed)  {
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.12) inset!important;
+  transition: box-shadow .3s ease,padding .3s ease,width .3s cubic-bezier(0.4,0.0,0.2,1);
+
+  nav-group-header {
+    display: none;
+  }
 }

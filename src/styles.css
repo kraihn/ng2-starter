@@ -9,3 +9,27 @@ body {
 .toolbar__usermenu {
   max-width: inherit;
 }
+
+.nav-item-menu__menu {
+  position: relative;
+  left: 40px;
+}
+
+nav-group-header {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 0 24px;
+  overflow: hidden;
+  cursor: default;
+  color: rgba(0,0,0,0.38);
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  height: 32px;
+  opacity: 1;
+}
+
+.sidenav--collapsed nav-group-header {
+  display: none;
+}

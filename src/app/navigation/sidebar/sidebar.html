@@ -1,8 +1,8 @@
-<md-sidenav [opened]="open" mode="side" class="app-sidenav">
+<md-sidenav [opened]="open" mode="push" class="app-sidenav">
   <md-nav-list  class="nav-list">
     <ng-content></ng-content>
   </md-nav-list>
-  <button md-button class="sidemenu__expando" (click)="closeMenu()">
+  <button md-button disableRipple="true" class="sidemenu__expando" (click)="toggleExpansion()">
     <md-icon>chevron_left</md-icon>
   </button>
 </md-sidenav>
