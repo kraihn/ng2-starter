@@ -1,3 +1,4 @@
-export * from './not-found.component';
+export * from './not-found/not-found';
 export * from './home/home';
-export * from './protected.component';
+export * from './protected/protected';
+export * from './nested';

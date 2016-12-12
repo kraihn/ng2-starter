@@ -19,11 +19,11 @@
 
       <nav-group>
         <nav-group-header>
-          Other
+          Nested
         </nav-group-header>
-        <nav-item (onNavigate)="closeSidenav()" route="/home" icon="home">Home</nav-item>
-        <nav-item (onNavigate)="closeSidenav()" route="/not-found" icon="visibility_off">Not Found</nav-item>
-        <nav-item (onNavigate)="closeSidenav()" route="/protected" icon="lock">Protected</nav-item>
+        <nav-item (onNavigate)="closeSidenav()" route="/nested/main" icon="home">Main</nav-item>
+        <nav-item (onNavigate)="closeSidenav()" route="/nested/sub1" icon="visibility_off">Sub 1</nav-item>
+        <nav-item (onNavigate)="closeSidenav()" route="/nested/sub2" icon="lock">Sub 2</nav-item>
       </nav-group>
 
       <nav-group>
