@@ -1,5 +1,6 @@
 import { NgModule }            from '@angular/core';
 import { RouterModule }        from '@angular/router';
+import { SharedModule }        from '../shared/shared.module';
 import { AuthGuard }           from '../core/auth-guard';
 
 import * as contentPages      from './';
@@ -30,7 +31,7 @@ const routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [SharedModule, RouterModule.forChild(routes)],
   exports: [ RouterModule ]
 })
 export class RoutingModule {}

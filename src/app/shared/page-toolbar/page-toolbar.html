@@ -10,4 +10,11 @@
       <ng-content select="help-link"></ng-content>
     </md-menu>
   </help-button>
+
+  <md-toolbar-row *ngIf="hasPageNavLinks">
+    <page-nav-bar [links]="pageNavLinks">
+      <ng-content select="page-nav-link"></ng-content>
+    </page-nav-bar>
+  </md-toolbar-row>
+
 </md-toolbar>

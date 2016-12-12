@@ -10,6 +10,8 @@ import * as ProfileAvatar from './profile-avatar/profile-avatar';
 import * as ToolbarProfile from './toolbar-profile/toolbar-profile';
 import * as PageToolbar from './page-toolbar/page-toolbar';
 import * as PageTitle from './page-title/page-title';
+import * as PageNavLink from './page-nav-link/page-nav-link';
+import * as PageNavBar from './page-nav-bar/page-nav-bar';
 import * as PageAction from './page-action/page-action';
 import * as HelpButton from './help-button/help-button';
 import * as HelpLink from './help-link/help-link';
@@ -25,12 +27,14 @@ const components = [
   CardSplash.CardSplashSecondary,
   ProfileAvatar.ProfileAvatar,
   ToolbarProfile.ToolbarProfile,
-  PageToolbar.PageToolbar,
   PageTitle.PageTitle,
   PageAction.PageAction,
   HelpButton.HelpButton,
   HelpLink.HelpLink,
   FillSpace.FillSpace,
+  PageNavBar.PageNavBar,
+  PageNavLink.PageNavLink,
+  PageToolbar.PageToolbar,
 ];
 
 @NgModule({
