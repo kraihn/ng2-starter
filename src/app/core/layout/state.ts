@@ -4,6 +4,6 @@ export interface State {
 }
 
 export const initialState: State = {
-  show: false,
+  show: true,
   expand: true,
 };

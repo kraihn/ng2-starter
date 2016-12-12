@@ -8,5 +8,4 @@ import { MdMenu } from '@angular/material';
 })
 export class HelpButton {
   @ContentChild(MdMenu) menu: MdMenu;
-
 }
