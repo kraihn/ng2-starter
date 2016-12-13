@@ -10,7 +10,7 @@ import * as CardSplash from './card-splash/card-splash.component';
 import * as FillSpace from './fill-space/fill-space';
 import * as HelpButton from './help-button/help-button';
 import * as HelpLink from './help-link/help-link';
-import * as HeroLink from './hero-unit/hero-unit';
+import * as HeroUnit from './hero-unit/hero-unit';
 import * as LargeCircleButton from './large-circle-button/large-circle-button';
 import * as IconLink from './icon-link/icon-link';
 import * as LinksList from './links-list/linkS-list';
@@ -38,8 +38,8 @@ const components = [
   FillSpace.FillSpace,
   HelpButton.HelpButton,
   HelpLink.HelpLink,
-  HeroLink.HeroUnit,
-  HeroLink.HeroUnitImage,
+  HeroUnit.HeroUnit,
+  HeroUnit.HeroUnitImage,
   LargeCircleButton.LargeCircleButton,
   IconLink.IconLink,
   LinksList.LinksList,
@@ -53,7 +53,7 @@ const components = [
   SplitCard.SplitCardRight,
   SplitCard.SplitCardLeft,
   TagLine.TagLine,
-  TagLine.TagLineFooter,
+  TagLine.TagLineMore,
   ToolbarProfile.ToolbarProfile,
   WelcomeBanner.WelcomeBanner,
   WelcomeBanner.WelcomeBannerContent,

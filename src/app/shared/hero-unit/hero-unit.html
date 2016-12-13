@@ -1,2 +1,9 @@
-<ng-content>
-</ng-content>
+<div class="hero-unit__image-wrapper" *ngIf="hasHeroImage">
+  <ng-content select="hero-unit-image"></ng-content>
+</div>
+<div class="hero-unit__copy">
+  <ng-content select="tag-line"></ng-content>
+</div>
+<div class="hero-unit__actions">
+  <ng-content select="actions-list"></ng-content>
+</div>

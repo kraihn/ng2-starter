@@ -1,9 +1,9 @@
 import { Directive, Component, Input } from '@angular/core';
 
 @Directive({
-  selector: 'tag-line-footer'
+  selector: 'tag-line-more'
 })
-export class TagLineFooter { }
+export class TagLineMore { }
 
 
 @Component({
