@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  margin: 0;
+  padding-bottom: 76px;
+  padding-top: 48px;
+  position: relative;
+  background-color: #fff;
+
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+
+}
+.actions-banner__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions-banner__title {
+  color: rgba(0,0,0,0.54);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 20px 0 36px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+

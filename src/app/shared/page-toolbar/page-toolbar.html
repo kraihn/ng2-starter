@@ -1,4 +1,4 @@
-<md-toolbar color="primary">
+<md-toolbar class="toolbar" color="primary">
   <ng-content select="page-title"></ng-content>
   <fill-space></fill-space>
   <div class="page-actions">
@@ -16,5 +16,7 @@
       <ng-content select="page-nav-link"></ng-content>
     </page-nav-bar>
   </md-toolbar-row>
+
+  <ng-content></ng-content>
 
 </md-toolbar>

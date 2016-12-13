@@ -4,6 +4,7 @@ import { CommonModule }        from '@angular/common';
 import { FormsModule }         from '@angular/forms';
 import { MaterialModule }      from '@angular/material';
 
+import * as ActionsBanner from './actions-banner/actions-banner';
 import * as ActionsList from './actions-list/actions-list';
 import * as CardSplash from './card-splash/card-splash.component';
 import * as FillSpace from './fill-space/fill-space';
@@ -25,6 +26,9 @@ import * as ToolbarProfile from './toolbar-profile/toolbar-profile';
 import * as WelcomeBanner from './welcome-banner/welcome-banner';
 
 const components = [
+  ActionsBanner.ActionsBanner,
+  ActionsBanner.ActionsBannerAction,
+  ActionsBanner.ActionsBannerTitle,
   ActionsList.ActionsList,
   ActionsList.ActionsListFooter,
   CardSplash.CardSplash,
