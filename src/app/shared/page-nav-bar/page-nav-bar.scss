@@ -5,9 +5,12 @@
 
 :host /deep/ {
   [md-tab-link] {
-    font-weight: 300;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
     min-width: 90px;
+    line-height: 24px;
+    height: 32px;
   }
   .active {
     opacity: 1;
