@@ -1,0 +1,26 @@
+@import './variables';
+@import '~bourbon/app/assets/stylesheets/bourbon';
+@import '~bourbon-neat/app/assets/stylesheets/neat';
+
+
+%font-family {
+  font-family: $font-family;
+}
+
+%shadow {
+  box-shadow: $shadow;
+}
+
+%page-base {
+  @include outer-container;
+  @include display(flex);
+  @include flex-direction(column);
+
+  margin-top: $page-margin-top;
+}
+
+%card-base {
+  @include shift(3 of 16);
+  @include span-columns(10 of 16);
+  padding: 0px;
+}

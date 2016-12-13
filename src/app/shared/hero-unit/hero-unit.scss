@@ -1,4 +1,4 @@
-:host {
+:host() {
   display: flex;
   flex: 1 1;
   flex-direction: column;
@@ -7,7 +7,7 @@
   box-sizing: border-box;
   padding: 0;
   position: relative;
-  margin: 96px auto;
+  margin: 96px auto !important;
   min-height: 144px;
 }
 :host(.hero-unit--with-image) {

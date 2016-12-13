@@ -1,0 +1,10 @@
+@import '../../../../styles/mix-ins';
+
+
+:host {
+  @extend %page-base;
+}
+
+md-card {
+  @extend %card-base;
+}
