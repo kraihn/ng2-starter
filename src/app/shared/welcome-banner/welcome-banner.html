@@ -1,2 +1,11 @@
-<ng-content>
-</ng-content>
+<div class="welcome-banner__wrapper">
+  <div class="welcome-banner__title">
+    <ng-content select="welcome-banner-title"></ng-content>
+  </div>
+  <div class="welcome-banner__content">
+    <ng-content select="welcome-banner-content"></ng-content>
+  </div>
+  <links-list>
+    <ng-content select="icon-link"></ng-content>
+  </links-list>
+</div>

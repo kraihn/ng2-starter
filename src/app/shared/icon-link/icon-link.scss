@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  color: #03a9f4;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.icon-link__icon {
+    font-size: 16px;
+    left: 0;
+    top: 2px;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+}
+
+a {
+  color: #03a9f4;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 8px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
+}
