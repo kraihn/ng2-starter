@@ -1,0 +1,15 @@
+:host {
+  margin-right: -16px;
+  margin-left: -16px;
+}
+
+:host /deep/ {
+  [md-tab-link] {
+    font-weight: 300;
+    text-transform: uppercase;
+    min-width: 90px;
+  }
+  .active {
+    opacity: 1;
+  }
+}

@@ -2,7 +2,7 @@
   <a md-tab-link
      *ngFor="let link of links"
      [routerLink]="link.route"
-     routerLinkActive
+     routerLinkActive="active"
      #rla="routerLinkActive"
      [active]="isActive(rla)" >{{ link.title }}</a>
 </div>

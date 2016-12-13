@@ -2,8 +2,21 @@ $row-height: 56px;
 
 md-toolbar {
   min-height: $row-height;
+  background-color: #039be5;
+}
+
+.page-nav {
+  height: 48px;
 }
 
 :host /deep/ md-toolbar-row {
   height: $row-height;
+}
+
+:host /deep/ [md-tab-nav-bar] {
+  border-bottom: none;
+}
+
+:host /deep/ md-ink-bar {
+  background-color: #fff;
 }

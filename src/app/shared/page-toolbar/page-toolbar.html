@@ -11,7 +11,7 @@
     </md-menu>
   </help-button>
 
-  <md-toolbar-row *ngIf="hasPageNavLinks">
+  <md-toolbar-row class="page-nav" *ngIf="hasPageNavLinks">
     <page-nav-bar [links]="pageNavLinks">
       <ng-content select="page-nav-link"></ng-content>
     </page-nav-bar>

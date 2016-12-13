@@ -1,1 +1,20 @@
-<h1>Nested Main</h1>
+
+  <hero-unit>
+      <hero-unit-image>
+        <img [ngStyle]="{'height': '192px', 'width': '192px'}" src="//www.gstatic.com/mobilesdk/160505_mobilesdk/zerostate/2x/crash.png">
+      </hero-unit-image>
+
+      <tag-line>
+        You are on the Nested Home Page
+        <tag-line-more>
+          <icon-link icon="insert_drive_file">Learn More</icon-link>
+        </tag-line-more>
+      </tag-line>
+
+      <actions-list class="compressed">
+        <button md-raised-button color="primary">
+          Do Good Things
+        </button>
+        <actions-list-footer>Do good things, good things happen</actions-list-footer>
+      </actions-list>
+  </hero-unit>
