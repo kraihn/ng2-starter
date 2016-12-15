@@ -13,6 +13,7 @@ This is the start of a starter seed for angular 2 using ngRx, material 2 and for
 - Document module layout
 - Document component styling
 - Document State structure
+- Document State flow
 
 ## Component Cleanup
 - Move feature components into shared. (when it makes sense)
@@ -28,6 +29,7 @@ This is the start of a starter seed for angular 2 using ngRx, material 2 and for
 - Fix auth redirects
 - Create Profile State.
 - Abstract Profile.
+- Add Normalizr
 
 ## UI
 - Add Generic input
