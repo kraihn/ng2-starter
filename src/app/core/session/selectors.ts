@@ -16,6 +16,7 @@ const _error = (state: session.State) => state.error;
 
 
 export const getSessionState = (state$: app.State) => state$.session;
+
 export const getInitalized = createSelector(getSessionState, _initalized);
 export const getLoading = createSelector(getSessionState, _loading, );
 export const getHasError = createSelector(getSessionState, _hasError);

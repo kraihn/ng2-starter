@@ -29,14 +29,10 @@ export class LoginWithPasswordAction implements Action {
 
 export class LoginWithGoogleAction implements Action {
   type = ActionTypes.LOGIN_WITH_GOOGLE;
-
-  constructor() { }
 }
 
 export class LoginCompleteAction implements Action {
   type = ActionTypes.LOGIN_COMPLETE;
-
-  constructor() { }
 }
 
 export class LoginErrorAction implements Action {
@@ -47,8 +43,6 @@ export class LoginErrorAction implements Action {
 
 export class LogoutAction implements Action {
   type = ActionTypes.LOGOUT;
-
-  constructor() { }
 }
 
 export class RegisterAction implements Action {
@@ -59,8 +53,6 @@ export class RegisterAction implements Action {
 
 export class RegisterCompleteAction implements Action {
   type = ActionTypes.REGISTER_COMPLETE;
-
-  constructor() { }
 }
 
 export class RegisterError implements Action {

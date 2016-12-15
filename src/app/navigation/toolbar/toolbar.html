@@ -5,7 +5,7 @@
   <span class="toolbar__title">Angular2-Redux-Starter</span>
   <span class="toolbar__spacer"></span>
 
-  <profile-avatar class="toolbar__user" [user]="user | async" [md-menu-trigger-for]="menu"></profile-avatar>
+  <profile-avatar *ngIf="isAuthenticated | async" class="toolbar__user" [user]="user | async" [md-menu-trigger-for]="menu"></profile-avatar>
 
   <md-menu class="toolbar__usermenu" #menu="mdMenu" x-position="before" y-position="below">
     <toolbar-profile [user]="user | async" (onSignout)="logout()">Sign Out</toolbar-profile>
