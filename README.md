@@ -19,6 +19,16 @@ This is the start of a starter seed for angular 2 using ngRx, material 2 and for
 - Create a proper theming solution for the components.
 - Nest some related and nested components into a single file.
 
+## App API
+- Create Auth abstration
+  - support custom oAuth from a local source (.net WEBAPI)
+  - support auth from auth0.
+  - support auth from firebase.
+- Document the use of effects for caching and preloading data.
+- Fix auth redirects
+- Create Profile State.
+- Abstract Profile.
+
 ## UI
 - Add Generic input
   - Label Above and below options
