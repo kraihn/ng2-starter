@@ -17,8 +17,8 @@ export class AppLayoutComponent {
   sidenavExpand$: Observable<boolean>;
 
   constructor(private store: Store<app.State>) {
-    this.sidenavShow$ = this.store.select(layout.getShow);
-    this.sidenavExpand$ = this.store.select(layout.getExpand);
+    this.sidenavShow$ = this.store.select(layout.getShowSidebar);
+    this.sidenavExpand$ = this.store.select(layout.getExpandSidebar);
   }
 
   closeSidenav() {
@@ -39,14 +39,14 @@ export class AppLayoutComponent {
 
   toogleSidenav() {
     let isOpen: boolean;
-    this.store.take(1).subscribe(state => isOpen = state.layout.show);
+    this.store.take(1).subscribe(state => isOpen = state.layout.showSidebar);
 
     isOpen ? this.closeSidenav() : this.openSidenav();
   }
 
   toggleExpansion() {
     let isExpanded: boolean;
-    this.store.take(1).subscribe(state => isExpanded = state.layout.expand);
+    this.store.take(1).subscribe(state => isExpanded = state.layout.expandSidebar);
 
     isExpanded ? this.collapseSidenav() : this.expandSidenav();
 

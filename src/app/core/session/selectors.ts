@@ -3,7 +3,7 @@ import { compose } from '@ngrx/core/compose';
 import { Observable } from 'rxjs/Observable';
 import '@ngrx/core/add/operator/select';
 
-import * as app from '../app-state/state';
+import * as app from '../shared/state';
 import * as session from './state';
 
 

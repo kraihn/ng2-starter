@@ -3,24 +3,29 @@ import { State, initialState } from './state';
 
 export function layoutReducer(state = initialState, action: LayoutAction): State {
   switch (action.type) {
+    case ActionTypes.APP_LOADED:
+      return Object.assign({}, state, {
+        appLoaded: true
+    });
+
     case ActionTypes.CLOSE_SIDENAV:
       return Object.assign({}, state, {
-        show: false
+        expandSidebar: false
       });
 
     case ActionTypes.OPEN_SIDENAV:
       return Object.assign({}, state, {
-        show: true
+        expandSidebar: true
       });
 
     case ActionTypes.EXPAND_SIDENAV:
       return Object.assign({}, state, {
-        expand: true
+        expandSidebar: true
       });
 
     case ActionTypes.COLLAPSE_SIDENAV:
       return Object.assign({}, state, {
-        expand: false
+        expandSidebar: false
       });
 
     default:

@@ -1,0 +1,80 @@
+$loading-max: 40px;
+$loading-mid: $loading-max*0;
+$loading-min: $loading-max*-1;
+
+@mixin loading-element-position($x, $y) {
+  left: $x;
+  top: $y;
+}
+
+@mixin build-loading-dot ($y, $x, $y-end:null, $x-end:null, $name:null) {
+  @include loading-element-position($x, $y);
+  @if $name {
+  animation: $name 1s ease-in-out infinite;
+    @keyframes #{$name} {
+      50% {
+        @include loading-element-position($x-end, $y-end);
+      }
+      100% {
+        @include loading-element-position($x-end, $y-end);
+      }
+    }
+   }
+}
+
+
+body {
+  background: #bb564f;
+}
+#app-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(45deg) translate(-50%, -50%);
+  li {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+  }
+}
+
+#t {
+  @include build-loading-dot($loading-min, $loading-min, $loading-mid, $loading-min, to-top-left);
+}
+
+#tl {
+  @include build-loading-dot($loading-mid, $loading-min, $loading-max, $loading-min, to-left);
+}
+
+#l {
+  @include build-loading-dot($loading-max, $loading-min, $loading-max, $loading-min, to-bottom-left);
+}
+
+#bl {
+  @include build-loading-dot($loading-max, $loading-mid, $loading-max, $loading-max, to-bottom);
+}
+
+#b {
+  @include build-loading-dot($loading-max, $loading-max, $loading-mid, $loading-max, to-bottom-right);
+}
+
+#br {
+  @include build-loading-dot($loading-mid, $loading-max, $loading-min, $loading-max, to-right);
+}
+
+#r {
+  @include build-loading-dot($loading-min, $loading-max, $loading-min, $loading-mid, to-top-right);
+}
+
+#tr {
+  @include build-loading-dot($loading-mid, $loading-min, $loading-min, $loading-min, to-top);
+}
+
+#c {
+  @include build-loading-dot($loading-mid, $loading-mid);
+}

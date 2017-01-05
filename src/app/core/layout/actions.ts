@@ -1,34 +1,40 @@
 import { Action } from '@ngrx/store';
-import { type } from '../util';
+import { makeActionType } from '../shared';
 
 
-export const ActionTypes = {
-  OPEN_SIDENAV:   type('[Layout] Open Sidenav'),
-  CLOSE_SIDENAV:  type('[Layout] Close Sidenav'),
-  EXPAND_SIDENAV:   type('[Layout] Expand Sidenav'),
-  COLLAPSE_SIDENAV:  type('[Layout] Collapse Sidenav')
+export class ActionTypes {
+  static readonly APP_LOADED = makeActionType('[Layout] App Loaded');
+  static readonly OPEN_SIDENAV = makeActionType('[Layout] Open Sidenav');
+  static readonly CLOSE_SIDENAV = makeActionType('[Layout] Close Sidenav');
+  static readonly EXPAND_SIDENAV = makeActionType('[Layout] Expand Sidenav');
+  static readonly COLLAPSE_SIDENAV = makeActionType('[Layout] Collapse Sidenav');
 };
 
 
+export class AppLoadedAction implements Action {
+  readonly type = ActionTypes.APP_LOADED;
+}
+
 export class OpenSidenavAction implements Action {
-  type = ActionTypes.OPEN_SIDENAV;
+  readonly type = ActionTypes.OPEN_SIDENAV;
 }
 
 export class CloseSidenavAction implements Action {
-  type = ActionTypes.CLOSE_SIDENAV;
+  readonly type = ActionTypes.CLOSE_SIDENAV;
 }
 
 export class ExpandSidenavAction implements Action {
-  type = ActionTypes.EXPAND_SIDENAV;
+  readonly type = ActionTypes.EXPAND_SIDENAV;
 }
 
 export class CollapseSidenavAction implements Action {
-  type = ActionTypes.COLLAPSE_SIDENAV;
+  readonly type = ActionTypes.COLLAPSE_SIDENAV;
 }
 
 
 export type LayoutAction
-  = OpenSidenavAction
+  = AppLoadedAction
+  | OpenSidenavAction
   | CloseSidenavAction
   | ExpandSidenavAction
   | CollapseSidenavAction;

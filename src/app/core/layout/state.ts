@@ -1,9 +1,11 @@
 export interface State {
-  show: boolean;
-  expand: boolean;
+  showSidebar: boolean;
+  expandSidebar: boolean;
+  appLoaded: boolean
 }
 
 export const initialState: State = {
-  show: true,
-  expand: true,
+  showSidebar: true,
+  expandSidebar: true,
+  appLoaded: false
 };

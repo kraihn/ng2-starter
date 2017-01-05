@@ -10,14 +10,14 @@ import {
 import { Observable }           from 'rxjs/Observable';
 import { of }                   from 'rxjs/observable/of';
 
-import * as app                 from '../app-state';
+import { State as AppState }    from '../shared';
 import * as session             from '../session';
 
 
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
-    private store: Store<app.State>,
+    private store: Store<AppState>,
     private router: Router
   ) { }
 

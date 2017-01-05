@@ -1,1 +1,1 @@
-export { State } from './app-state';
+export { State } from './shared';

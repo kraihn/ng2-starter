@@ -12,7 +12,7 @@ import { AngularFireModule,
   AuthProviders, AuthMethods }  from 'angularfire2';
 
 
-import { reducer }          from './app-state';
+import { reducer }          from './shared';
 import { SessionEffects }   from './session/effects';
 import { AuthGuard }        from './auth-guard';
 
