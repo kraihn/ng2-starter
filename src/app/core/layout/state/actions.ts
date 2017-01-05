@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { makeActionType } from '../shared';
+import { makeActionType } from '../../shared';
 
 
 export class ActionTypes {

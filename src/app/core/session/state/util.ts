@@ -1,5 +1,6 @@
 import { AuthProviders }      from 'angularfire2';
-import { Error, User }        from './models';
+import { User }        from '../models';
+import { Error }              from  '../../shared';
 
 
 export const mapToUser = (auth): User => {

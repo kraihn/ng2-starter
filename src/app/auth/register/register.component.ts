@@ -2,7 +2,9 @@ import { Component }    from '@angular/core';
 import { Observable }   from 'rxjs/Observable';
 import { Store }        from '@ngrx/store';
 
-import * as app         from '../../core';
+import {
+  State as AppState,
+  Error }               from '../../core/shared';
 import * as session     from '../../core/session';
 import { Credential }   from '../credentials/credentials.component';
 
@@ -15,9 +17,9 @@ import { Credential }   from '../credentials/credentials.component';
 export class RegisterComponent {
   isLoading: Observable<boolean>;
   hasError: Observable<boolean>;
-  error: Observable<session.Error>;
+  error: Observable<Error>;
 
-  constructor(private store: Store<app.State>) {
+  constructor(private store: Store<AppState>) {
     this.isLoading = this.store.select(session.getLoading);
     this.hasError = this.store.select(session.getHasError);
     this.error = this.store.select(session.getError);

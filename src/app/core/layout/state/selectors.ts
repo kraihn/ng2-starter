@@ -3,7 +3,7 @@ import { compose } from '@ngrx/core/compose';
 import { Observable } from 'rxjs/Observable';
 import '@ngrx/core/add/operator/select';
 
-import { State as AppState }from '../shared/state';
+import { State as AppState }from '../../shared/state';
 import * as layout from './state';
 
 const _getShowSidebar = (state: layout.State) => state.showSidebar;

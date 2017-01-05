@@ -11,8 +11,8 @@ import { combineReducers }    from '@ngrx/store';
 
 import * as router            from '@ngrx/router-store';
 import { State as AppState }  from '../state';
-import * as session           from '../../session/reducer';
-import * as layout            from '../../layout/reducer';
+import * as session           from '../../session/state/reducer';
+import * as layout            from '../../layout/state/reducer';
 
 const reducers = {
   router: router.routerReducer,

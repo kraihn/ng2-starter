@@ -11,6 +11,3 @@ export interface User {
   photoURL: string;
 }
 
-export interface Error {
-  message: string
-}

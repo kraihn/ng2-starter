@@ -1,4 +1,5 @@
-import { User, Error } from  './models';
+import { User } from  '../models';
+import { Error } from  '../../shared';
 
 export interface State {
   user: User;

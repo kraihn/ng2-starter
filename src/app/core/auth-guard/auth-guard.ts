@@ -11,7 +11,7 @@ import { Observable }           from 'rxjs/Observable';
 import { of }                   from 'rxjs/observable/of';
 
 import { State as AppState }    from '../shared';
-import * as session             from '../session';
+import * as session             from '../session/state';
 
 
 @Injectable()

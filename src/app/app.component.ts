@@ -7,7 +7,7 @@ import { AngularFire }  from 'angularfire2';
 import * as app         from './core';
 import * as layout from './core/layout';
 import * as session        from './core/session';
-import * as sessionUtil    from './core/session/util';
+import * as sessionUtil    from './core/session/state/util';
 
 @Component({
   selector: 'app-root',

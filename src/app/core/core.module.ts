@@ -13,7 +13,7 @@ import { AngularFireModule,
 
 
 import { reducer }          from './shared';
-import { SessionEffects }   from './session/effects';
+import { SessionEffects }   from './session/state/effects';
 import { AuthGuard }        from './auth-guard';
 
 export const firebaseConfig = {

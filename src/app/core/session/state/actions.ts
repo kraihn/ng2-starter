@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
-import { Credentials, User, Error } from './models'
-import { makeActionType } from '../shared';
+import { Credentials, User } from '../models'
+import { Error } from '../../shared'
+import { makeActionType } from '../../shared';
 
 
 export class ActionTypes {
